@@ -74,7 +74,7 @@ class LoginPage extends StatelessWidget {
                       }
                       bool success = await loginViewModel.login(emailController.text, passwordController.text);
                       if (success) {
-                        Navigator.pushReplacementNamed(context, '/home');
+                        Navigator.pushReplacementNamed(context, '/listpage'); // Navigasi ke ListPage setelah login sukses
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(content: Text('Login Failed')),
@@ -86,7 +86,7 @@ class LoginPage extends StatelessWidget {
                     ),
                     child: Text(
                       'Login',
-                      style: TextStyle(fontSize: 18), // Ukuran teks tombol
+                      style: TextStyle(fontSize: 18),
                     ),
                   ),
                   SizedBox(height: 10),

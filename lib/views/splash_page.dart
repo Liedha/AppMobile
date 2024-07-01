@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // Delay untuk menampilkan splash screen
     Future.delayed(Duration(seconds: 2), () {
-      Navigator.pushReplacementNamed(context, '/login');
+      Navigator.pushReplacementNamed(context, '/home'); // Navigasi ke halaman home setelah splash
     });
 
     return Scaffold(
@@ -12,7 +13,7 @@ class SplashPage extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.purpleAccent.shade100,
           image: DecorationImage(
-            image: AssetImage('logo.jpg'),
+            image: AssetImage('assets/logo.jpg'), // Ganti dengan path yang sesuai dengan logo Anda
             fit: BoxFit.cover,
           ),
         ),

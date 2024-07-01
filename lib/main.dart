@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'viewmodels/inspiration_viewmodel.dart';
 import 'viewmodels/login_viewmodel.dart';
-import 'views/home_page.dart';
+import 'views/list_page.dart';
 import 'views/detail_page.dart';
 import 'views/login_page.dart';
 import 'views/registration_page.dart';
 import 'views/search_page.dart';
 import 'views/splash_page.dart';
-
+import 'views/home_page.dart';
 
 void main() {
   runApp(DailyInspirationApp());
@@ -36,6 +36,7 @@ class DailyInspirationApp extends StatelessWidget {
           '/home': (context) => HomePage(),
           '/search': (context) => SearchPage(),
           '/detail': (context) => DetailPage(),
+          '/listpage': (context) => ListPage(), // Pastikan rute ini benar
         },
       ),
     );

@@ -11,6 +11,9 @@ class InspirationListItem extends StatelessWidget {
     return ListTile(
       title: Text(inspiration.text),
       subtitle: Text(inspiration.author),
+      trailing: inspiration.imageUrl != null
+          ? Image.network(inspiration.imageUrl!)
+          : null,
       onTap: () {
         Navigator.pushNamed(context, '/detail', arguments: inspiration);
       },

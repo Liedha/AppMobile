@@ -4,7 +4,7 @@ import '../viewmodels/inspiration_viewmodel.dart';
 import '../widgets/inspiration_list_item.dart';
 import '../widgets/custom_app_bar.dart';
 
-class HomePage extends StatelessWidget {
+class ListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(

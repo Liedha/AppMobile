@@ -1,26 +1,22 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import '../models/user.dart';
+import '../models/user.dart' as Models; // Importing User model with prefix 'Models'
+import '../services/database_service.dart'; // Importing DatabaseHelper
 
 class LoginViewModel with ChangeNotifier {
-  Future<bool> login(String email, String password) async {
-    final prefs = await SharedPreferences.getInstance();
-    final userData = prefs.getString('user_$email');
+  final DatabaseHelper _databaseHelper = DatabaseHelper();
 
-    if (userData != null) {
-      final user = User.fromJson(Map<String, dynamic>.from(jsonDecode(userData)));
-      if (user.password == password) {
-        return true;
-      }
+  Future<bool> login(String email, String password) async {
+    Models.User? user = await _databaseHelper.getUser(email); // Using DatabaseHelper
+
+    if (user != null && user.password == password) {
+      return true;
     }
+
     return false;
   }
 
   Future<void> register(String email, String password) async {
-    final prefs = await SharedPreferences.getInstance();
-    final user = User(email: email, password: password);
-    await prefs.setString('user_$email', jsonEncode(user.toJson()));
+    Models.User user = Models.User(email: email, password: password); // Using prefix 'Models'
+    await _databaseHelper.insertUser(user);
   }
 }
