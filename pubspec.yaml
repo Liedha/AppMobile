@@ -1,0 +1,29 @@
+name: daily_inspiration
+description: A daily inspiration app.
+
+# Versi Flutter SDK yang digunakan
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^5.0.0
+  http: ^0.13.3
+  sqflite: ^2.0.0
+  path_provider: ^2.0.2
+  shared_preferences: ^2.0.5
+  cached_network_image: ^3.1.0
+  connectivity_plus: ^2.0.2
+  flutter_local_notifications: ^12.0.0
+  firebase_core: ^1.10.6
+  firebase_crashlytics: ^2.2.3
+  flutter_launcher_icons: ^0.13.1
+
+# Optional: Jika Anda memiliki asset yang perlu dimuat
+# flutter:
+#   assets:
+#     - images/
+#     - assets/sounds/
+
+# Atau entri lainnya yang sesuai dengan struktur pubspec.yaml yang benar
